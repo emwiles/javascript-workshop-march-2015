@@ -54,3 +54,19 @@ updateRequest.done(function(itemData) {
 })
 
 })
+
+
+$('#list').on('click', '.delete-button', function(event) {
+  var item = $(event.target).parent();
+  var isItemCompleted = item.hasClass('completed')
+  var itemId = item.attr('data-id')
+// console.log("test");
+	item.hide();
+
+  var updateRequest = $.ajax({
+  type: 'DELETE',
+  url: "https://listalous.herokuapp.com/lists/Erin-M-Wiles/items/" + itemId,
+  data: { completed: !isItemCompleted }
+
+})
+})

@@ -103,6 +103,11 @@ form {
   color: #C3C3C4;
 }
 
+
+.item.deleted {
+  color: yellow;
+}
+
 #templates {
   display: none
 }
